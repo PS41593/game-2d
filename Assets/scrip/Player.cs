@@ -16,8 +16,11 @@ public class Player : MonoBehaviour
     private bool canjump;
     private bool doublejump;
     private bool _flip;
+    [SerializeField] private float down;
+    Vector2 Vector;
     void Start()
     {
+        Vector = new Vector2(0,-Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -58,5 +61,9 @@ public class Player : MonoBehaviour
         }
         else animator.SetBool("isRun", false);
         transform.localScale = _flip ? new Vector2(5.076945f, 4.419212f) : new Vector2(-5.076945f, 4.419212f);
+        if (rb.velocity.y < 0)
+        {
+            rb.velocity -= Vector * down * Time.deltaTime;
+        }
     }
 }
