@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
     private bool _flip;
     [SerializeField] private float down;
     Vector2 Vector;
+    public GameObject bulletPrefab;
+    public Transform guntransform;
     void Start()
     {
         Vector = new Vector2(0,-Physics2D.gravity.y);
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        ten();
     }
     private void Move()
     {
@@ -43,8 +46,7 @@ public class Player : MonoBehaviour
         {
             
             if (canjump || doublejump)
-            {
-                
+            {               
                 rb.velocity = new Vector2(rb.velocity.x, jumpspeed);
                 doublejump = !doublejump;                              
             }
@@ -77,10 +79,33 @@ public class Player : MonoBehaviour
         }
         if (rb.velocity.y <0 ) 
         { 
-            animator.SetBool("falling", true);          
-            
-            
+            animator.SetBool("falling", true); 
+           rb.velocity -= Vector * down *Time.deltaTime ;
         }
         transform.localScale = _flip ? new Vector2(5.076945f, 4.419212f) : new Vector2(-5.076945f, 4.419212f);
+    }
+    private void ten()
+    {
+        // nhan phim f ban dan
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+
+            // tao ra vien dan tai vi tri sung
+            var onBullet = Instantiate(bulletPrefab, guntransform.position, Quaternion.identity);
+
+            // Cho vien dan bay theo huong nhan vat
+            var velocity = new Vector2(10f, 0);
+            if (_flip == false)
+            {
+                velocity = new Vector2(-10f, 0);
+            }
+
+
+            onBullet.GetComponent<Rigidbody2D>()
+                .velocity = velocity;
+            // Destroy Dan
+            Destroy(onBullet, 2f);
+        }
+
     }
 }
