@@ -34,36 +34,53 @@ public class Player : MonoBehaviour
     {
         canjump = Physics2D.OverlapCircle(_canjump.position, 0.2f, nen);
         var Move = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(Move*movespeed, rb.velocity.y); 
-        
-       
+        rb.velocity = new Vector2(Move*movespeed, rb.velocity.y);            
         if (!Input.GetKeyDown(KeyCode.W)&& canjump)
         {
             doublejump = true;
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (canjump || doublejump) 
+            
+            if (canjump || doublejump)
             {
+                
                 rb.velocity = new Vector2(rb.velocity.x, jumpspeed);
-                doublejump = !doublejump;
+                doublejump = !doublejump;                              
             }
+
         }
-        if (Move > 0)
+        if (Move > 0 )
         {
-            _flip = true;
-            animator.SetBool("isRun", true);
+            _flip = true;          
         }
         else if (Move < 0)
         {
-            _flip = false;
+            _flip = false;           
+        }
+        if (rb.velocity.y == 0&& Move >0 ||rb.velocity.y==0 && Move <0) 
+        {
             animator.SetBool("isRun", true);
         }
-        else animator.SetBool("isRun", false);
-        transform.localScale = _flip ? new Vector2(5.076945f, 4.419212f) : new Vector2(-5.076945f, 4.419212f);
-        if (rb.velocity.y < 0)
+         if(Move == 0 && rb.velocity.y == 0)
         {
-            rb.velocity -= Vector * down * Time.deltaTime;
+            animator.SetBool("isRun", false);
         }
+         if(rb.velocity.y == 0)
+        {
+            animator.SetBool("2Jump", false);
+            animator.SetBool("falling",false);           
+        }
+        if (rb.velocity.y > 0)
+        {
+            animator.SetBool("2Jump", true);
+        }
+        if (rb.velocity.y <0 ) 
+        { 
+            animator.SetBool("falling", true);          
+            
+            
+        }
+        transform.localScale = _flip ? new Vector2(5.076945f, 4.419212f) : new Vector2(-5.076945f, 4.419212f);
     }
 }
