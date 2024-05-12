@@ -52,8 +52,15 @@ public class Bot : MonoBehaviour
         {
             currentSacle.x *= -1;
         }
-
-
         transform.localScale = currentSacle;
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var name = other.gameObject.name;
+        var tag = other.gameObject.tag;
+        if (tag == "arrow")
+        {
+            Destroy(gameObject);
+        }
     }
 }

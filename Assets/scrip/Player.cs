@@ -108,4 +108,18 @@ public class Player : MonoBehaviour
         }
 
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        var name = other.gameObject.name;
+        var tag = other.gameObject.tag;
+        if (tag == "Bot")
+        {
+            Destroy(gameObject);
+        }
+        if (other.gameObject.tag == "Coin")
+        {
+            Destroy(other.gameObject);
+           
+        }
+    }
 }
