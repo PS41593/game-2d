@@ -112,14 +112,13 @@ public class Player : MonoBehaviour
     {
         var name = other.gameObject.name;
         var tag = other.gameObject.tag;
-        if (tag == "Bot")
+        if (tag == "Bot"||tag =="Trap")
         {
             Destroy(gameObject);
         }
         if (other.gameObject.tag == "Coin")
         {
-            Destroy(other.gameObject);
-           
+            Destroy(other.gameObject);          
         }
     }
 }
