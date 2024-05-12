@@ -74,17 +74,22 @@ public class Player : MonoBehaviour
             
             rb.velocity -= Vector * down *Time.deltaTime ;
         }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            animator.SetBool("ak", true);          
+        }
+        else animator.SetBool("ak", false);
         transform.localScale = _flip ? new Vector2(5.076945f, 4.419212f) : new Vector2(-5.076945f, 4.419212f);
     }
+
     private void ten()
     {
         // nhan phim f ban dan
         if (Input.GetKeyUp(KeyCode.E))
         {
-            animator.SetBool("ak", true);
+            animator.SetTrigger("ak");
             // tao ra vien dan tai vi tri sung
             var onBullet = Instantiate(bulletPrefab, guntransform.position, Quaternion.identity);
-
             // Cho vien dan bay theo huong nhan vat
             var velocity = new Vector2(10f, 0);
             if (_flip == false)
@@ -95,7 +100,7 @@ public class Player : MonoBehaviour
                 .velocity = velocity;
             // Destroy Dan
             Destroy(onBullet, 2f);           
-        }else animator.SetBool("ak",false);
+        }
 
     }
     private void OnTriggerEnter2D(Collider2D other)
