@@ -282,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 5
   jumpspeed: 5
-  _canjump: {fileID: 0}
+  _canjump: {fileID: 2120390164}
   nen:
     serializedVersion: 2
     m_Bits: 64
