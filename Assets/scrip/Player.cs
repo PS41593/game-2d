@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
             
             rb.velocity -= Vector * down *Time.deltaTime ;
         }
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E)&& canjump)
         {
             animator.SetBool("ak", true);          
         }
@@ -85,9 +85,9 @@ public class Player : MonoBehaviour
     private void ten()
     {
         // nhan phim f ban dan
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E)&& canjump)
         {
-            animator.SetTrigger("ak");
+           
             // tao ra vien dan tai vi tri sung
             var onBullet = Instantiate(bulletPrefab, guntransform.position, Quaternion.identity);
             // Cho vien dan bay theo huong nhan vat
