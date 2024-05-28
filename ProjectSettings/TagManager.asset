@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bot
+  - arrow
+  - Ladder
   layers:
   - Default
   - TransparentFX
@@ -13,8 +15,8 @@ TagManager:
   - Water
   - UI
   - nen
-  - 
-  - 
+  - Ladder
+  - Player
   - 
   - 
   - 
@@ -41,4 +43,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ladder
+    uniqueID: 3326157561
+    locked: 0
+  - name: Player
+    uniqueID: 1581035925
     locked: 0

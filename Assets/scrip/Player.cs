@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     {
         Move();
         ten();
-        //ClimpLadder();
+        ClimpLadder();
     }
     private void Move()
     {
@@ -146,18 +146,18 @@ public class Player : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, climninput * climSpeed);
         }
     }
-   
-    //private void ClimpLadder()
-    //{
-    //    var isTouchingLadder = capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
-    //    if (!isTouchingLadder)
-    //    {
-    //        rb.gravityScale = gravti; 
-    //        return;
-    //    }
-    //    var climvelocity = new Vector2 (rb.velocity.x , up.y* climSpeed);
-    //    rb.velocity = climvelocity;
-    //    rb.gravityScale = 0; 
-    //}
+
+    private void ClimpLadder()
+    {
+        var isTouchingLadder = capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+        if (!isTouchingLadder)
+        {
+            rb.gravityScale = gravti;
+            return;
+        }
+        var climvelocity = new Vector2(rb.velocity.x, up.y * climSpeed);
+        rb.velocity = climvelocity;
+        rb.gravityScale = 0;
+    }
 
 }
