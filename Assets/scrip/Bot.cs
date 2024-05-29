@@ -70,6 +70,5 @@ public class Bot : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-    }
-    
+    }   
 }
