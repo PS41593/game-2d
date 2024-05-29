@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bot : MonoBehaviour
 {
@@ -13,11 +14,12 @@ public class Bot : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 1f;
     public int damage =5 ;
-    public Player player;
-
+    [SerializeField]private Slider bot;
+    private int Hp;
+    public int maxHp =100;
     void Start()
     {
-
+        Hp = maxHp;
     }
 
     // Update is called once per frame
@@ -57,12 +59,16 @@ public class Bot : MonoBehaviour
         transform.localScale = currentSacle;
     }
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        var name = other.gameObject.name;
+    {        
         var tag = other.gameObject.tag;
         if (tag == "arrow")
         {
-            Destroy(gameObject);
+            Hp -= 10;
+            bot.value = Hp;
+            if (Hp == 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     
