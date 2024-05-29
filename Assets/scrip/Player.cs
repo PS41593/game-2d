@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -28,7 +29,9 @@ public class Player : MonoBehaviour
     public Transform guntransform;
     CapsuleCollider2D capsuleCollider;
     private float gravti;
-    public int coin; 
+    public int coin;
+    
+    [SerializeField] private Slider SlHP; 
     void Start()
     {
         Vector = new Vector2(0,-Physics2D.gravity.y);
@@ -122,7 +125,8 @@ public class Player : MonoBehaviour
         var tag = other.gameObject.tag;
         if (tag == "Bot"||tag =="Trap")
         {
-            TakeDamage(10);
+            TakeDamage(5);
+            SlHP.value = health;
             if (health == 0)
             {
                 Destroy(gameObject);
@@ -171,5 +175,6 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage; 
+        
     }
 }
