@@ -8,6 +8,8 @@ using UnityEngine.SocialPlatforms;
 public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private int health;
+    [SerializeField] private int maxHealth= 10;
     [SerializeField]private float movespeed;
     [SerializeField]private float jumpspeed;
     [SerializeField]private float climSpeed = 5f;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour
     public Transform guntransform;
     CapsuleCollider2D capsuleCollider;
     private float gravti;
+    public int coin; 
     void Start()
     {
         Vector = new Vector2(0,-Physics2D.gravity.y);
@@ -33,14 +36,15 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         gravti = rb.gravityScale;
+        health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        ten();
-        ClimpLadder();
+        ten();        
+        //ClimpLadder();
     }
     private void Move()
     {
@@ -118,10 +122,15 @@ public class Player : MonoBehaviour
         var tag = other.gameObject.tag;
         if (tag == "Bot"||tag =="Trap")
         {
-            Destroy(gameObject);
+            TakeDamage(10);
+            if (health == 0)
+            {
+                Destroy(gameObject);
+            }
         }
         if (other.gameObject.tag == "Coin")
         {
+            coin += 10;
             Destroy(other.gameObject);          
         }
         if (other.gameObject.tag == "Ladder")
@@ -147,17 +156,20 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void ClimpLadder()
+    //private void ClimpLadder()
+    //{
+    //    var isTouchingLadder = capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+    //    if (!isTouchingLadder)
+    //    {
+    //        rb.gravityScale = gravti;
+    //        return;
+    //    }
+    //    var climvelocity = new Vector2(rb.velocity.x, up.y * climSpeed);
+    //    rb.velocity = climvelocity;
+    //    rb.gravityScale = 0;
+    //}
+    public void TakeDamage(int damage)
     {
-        var isTouchingLadder = capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
-        if (!isTouchingLadder)
-        {
-            rb.gravityScale = gravti;
-            return;
-        }
-        var climvelocity = new Vector2(rb.velocity.x, up.y * climSpeed);
-        rb.velocity = climvelocity;
-        rb.gravityScale = 0;
+        health -= damage; 
     }
-
 }

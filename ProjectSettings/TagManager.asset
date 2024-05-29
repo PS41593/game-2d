@@ -17,7 +17,7 @@ TagManager:
   - nen
   - Ladder
   - Player
-  - 
+  - background
   - 
   - 
   - 
@@ -44,9 +44,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 1520900653
+    locked: 0
+  - name: nen
+    uniqueID: 2203971099
+    locked: 0
   - name: Ladder
     uniqueID: 3326157561
     locked: 0
+  - name: bot
+    uniqueID: 2349916821
+    locked: 0
   - name: Player
     uniqueID: 1581035925
+    locked: 0
+  - name: bullet
+    uniqueID: 3223487621
     locked: 0
