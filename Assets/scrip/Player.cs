@@ -1,14 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField] private int health;
+    [SerializeField] private int maxHealth= 10;
     [SerializeField]private float movespeed;
     [SerializeField]private float jumpspeed;
+    [SerializeField]private float climSpeed = 5f;
+    private bool isclimp;
     Rigidbody2D rb;
     Animator animator;
     public Transform _canjump;
@@ -18,20 +24,30 @@ public class Player : MonoBehaviour
     private bool _flip;
     [SerializeField] private float down;
     Vector2 Vector;
+    Vector2 up;
     public GameObject bulletPrefab;
     public Transform guntransform;
+    CapsuleCollider2D capsuleCollider;
+    private float gravti;
+    public int coin;
+    
+    [SerializeField] private Slider SlHP; 
     void Start()
     {
         Vector = new Vector2(0,-Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        gravti = rb.gravityScale;
+        health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        ten();
+        ten();        
+        //ClimpLadder();
     }
     private void Move()
     {
@@ -109,11 +125,56 @@ public class Player : MonoBehaviour
         var tag = other.gameObject.tag;
         if (tag == "Bot"||tag =="Trap")
         {
-            Destroy(gameObject);
+            TakeDamage(5);
+            SlHP.value = health;
+            if (health == 0)
+            {
+                Destroy(gameObject);
+            }
         }
         if (other.gameObject.tag == "Coin")
         {
+            coin += 10;
             Destroy(other.gameObject);          
         }
+        if (other.gameObject.tag == "Ladder")
+        {
+            isclimp = true;
+            rb.gravityScale = 0f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ladder")
+        {
+            rb.gravityScale = 1f; 
+            isclimp =false;
+        }
+    }
+    private void FixedUpdate()
+    {
+        if (isclimp)
+        {
+            float climninput = Input.GetAxis("Vertical");
+            rb.velocity = new Vector2(rb.velocity.x, climninput * climSpeed);
+        }
+    }
+
+    //private void ClimpLadder()
+    //{
+    //    var isTouchingLadder = capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+    //    if (!isTouchingLadder)
+    //    {
+    //        rb.gravityScale = gravti;
+    //        return;
+    //    }
+    //    var climvelocity = new Vector2(rb.velocity.x, up.y * climSpeed);
+    //    rb.velocity = climvelocity;
+    //    rb.gravityScale = 0;
+    //}
+    public void TakeDamage(int damage)
+    {
+        health -= damage; 
+        
     }
 }
