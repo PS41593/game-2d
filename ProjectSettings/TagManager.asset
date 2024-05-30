@@ -7,6 +7,7 @@ TagManager:
   - Bot
   - arrow
   - Ladder
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -53,12 +54,18 @@ TagManager:
   - name: Ladder
     uniqueID: 3326157561
     locked: 0
+  - name: Hp
+    uniqueID: 1684031589
+    locked: 0
+  - name: Coin
+    uniqueID: 1437252479
+    locked: 0
+  - name: bullet
+    uniqueID: 3223487621
+    locked: 0
   - name: bot
     uniqueID: 2349916821
     locked: 0
   - name: Player
     uniqueID: 1581035925
-    locked: 0
-  - name: bullet
-    uniqueID: 3223487621
     locked: 0
