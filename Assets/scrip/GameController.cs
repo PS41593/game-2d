@@ -8,16 +8,16 @@ public class GameController : MonoBehaviour
     [SerializeField] int score =0 ;
     [SerializeField] int live =3 ;
     [SerializeField] TextMeshProUGUI ScoreText ;
-    [SerializeField] TextMeshProUGUI liveText;
+    
     // Start is called before the first frame update
     void Start()
     {
-        ScoreText.text = "Coin: "+score;
+        ScoreText.text = "Score: "+score;
     }
     public void AddScore(int ScoreToAdd)
     {
         score += ScoreToAdd;
-        ScoreText.text = "Coin: " + score; 
+        ScoreText.text = "Score: " + score; 
     }
     // Update is called once per frame
     void Update()
