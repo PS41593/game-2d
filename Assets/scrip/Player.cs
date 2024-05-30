@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class Player : MonoBehaviour
     public Transform _canjump;
     public LayerMask nen;
     private bool canjump;
-    private bool doublejump;
+    //private bool doublejump;
     private bool _flip;
     [SerializeField] private float down;
     Vector2 Vector;
@@ -29,9 +30,10 @@ public class Player : MonoBehaviour
     public Transform guntransform;
     CapsuleCollider2D capsuleCollider;
     private float gravti;
-    public int coin;
     
-    [SerializeField] private Slider SlHP; 
+    [SerializeField] private Slider SlHP;
+    
+    
     void Start()
     {
         Vector = new Vector2(0,-Physics2D.gravity.y);
@@ -40,6 +42,7 @@ public class Player : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         gravti = rb.gravityScale;
         health = maxHealth;
+        
     }
 
     // Update is called once per frame
@@ -132,11 +135,7 @@ public class Player : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (other.gameObject.tag == "Coin")
-        {
-            coin += 10;
-            Destroy(other.gameObject);          
-        }
+        
         if (other.gameObject.tag == "Ladder")
         {
             isclimp = true;
