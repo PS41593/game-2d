@@ -17,10 +17,12 @@ public class Bot : MonoBehaviour
     [SerializeField]private Slider bot;
     private int Hp;
     public int maxHp =100;
+   
     void Start()
     {
         Hp = maxHp;
         bot.value = Hp;
+        
     }
 
     // Update is called once per frame
@@ -53,11 +55,14 @@ public class Bot : MonoBehaviour
         // Scale Hiện tại
         // Trái < 0 Phải >0
         var currentSacle = transform.localScale;
+        var HPp = bot.transform.localScale;
         if ((_isMovingRight && currentSacle.x < 0) || (_isMovingRight == false && currentSacle.x > 0))
-        {
+        {             
             currentSacle.x *= -1;
+           HPp.x *= -1;
         }
         transform.localScale = currentSacle;
+        bot.transform.localScale = HPp;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {        
