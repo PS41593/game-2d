@@ -8,6 +8,9 @@ TagManager:
   - arrow
   - Ladder
   - Coin
+  - Trap
+  - Ground
+  - Healing
   layers:
   - Default
   - TransparentFX

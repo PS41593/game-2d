@@ -786,7 +786,7 @@ Transform:
   m_GameObject: {fileID: 735324727}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4897604, y: 5.885211, z: -10}
+  m_LocalPosition: {x: 6.7197604, y: 5.885211, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10841,7 +10841,7 @@ Transform:
   m_GameObject: {fileID: 1192929818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4897604, y: 5.885211, z: -10}
+  m_LocalPosition: {x: 6.7197604, y: 5.885211, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11632,13 +11632,17 @@ PrefabInstance:
       propertyPath: bot
       value: 
       objectReference: {fileID: 176382609}
+    - target: {fileID: 324004926599124408, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
+      propertyPath: itemPrefab
+      value: 
+      objectReference: {fileID: 5010481258305430185, guid: 632a2d2039490554ead710f158b35cc6, type: 3}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.2
+      value: 6.21
       objectReference: {fileID: 0}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43
+      value: 1.62
       objectReference: {fileID: 0}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11696,6 +11700,14 @@ PrefabInstance:
       propertyPath: m_WholeNumbers
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4603313471549046392, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
+      propertyPath: m_Size.y
+      value: 0.28306937
+      objectReference: {fileID: 0}
+    - target: {fileID: 4603313471549046392, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.032167993
+      objectReference: {fileID: 0}
     - target: {fileID: 7306618463004029816, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_Name
       value: Bot
@@ -11717,6 +11729,10 @@ PrefabInstance:
       propertyPath: SlHP
       value: 
       objectReference: {fileID: 1801790526}
+    - target: {fileID: 196056593121969781, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1231136837403162836, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -11727,7 +11743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6169061751968455933, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 3.24
       objectReference: {fileID: 0}
     - target: {fileID: 6169061751968455933, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
       propertyPath: m_LocalPosition.y

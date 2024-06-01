@@ -17,6 +17,10 @@ public class Bot : MonoBehaviour
     [SerializeField]private Slider bot;
     private int Hp;
     public int maxHp =100;
+
+    [SerializeField] private GameObject itemPrefab;
+    private bool _isTouchingPlayer = false;
+
     void Start()
     {
         Hp = maxHp;
@@ -71,8 +75,54 @@ public class Bot : MonoBehaviour
             bot.value = Hp;
             if (Hp == 0)
             {
-                Destroy(gameObject);
+                Destroy(gameObject,1f);
+                StartCoroutine(GoUp());
             }
         }
-    }   
+        
+    }
+
+    
+    IEnumerator GoUp()
+    {
+        //lay vi tri ban dau
+        var startPosition = transform.position;
+        //vi tri hien tai 
+        var currentPosition = startPosition;
+        while (true)
+        {
+            currentPosition.y += 0.1f;
+            transform.localPosition = currentPosition;
+            yield return new WaitForSeconds(0.02f);
+            if (currentPosition.y >= startPosition.y + 1f)
+            {
+                break;
+            }
+
+        }
+        StartCoroutine(GoDown());
+    }
+    IEnumerator GoDown()
+    {
+        //lay vi tri ban dau
+        var startPosition = transform.position;
+        //vi tri hien tai 
+        var currentPosition = startPosition;
+        while (true)
+        {
+            currentPosition.y -= 0.1f;
+            transform.localPosition = currentPosition;
+            yield return new WaitForSeconds(0.02f);
+            if (currentPosition.y <= startPosition.y - 1f)
+            {
+                break;
+            }
+
+        }
+        ////tao ra vat pham
+        Instantiate(itemPrefab, transform.position, Quaternion.identity);
+        ////bien mat khoi
+        Destroy(gameObject);
+    }
+
 }
