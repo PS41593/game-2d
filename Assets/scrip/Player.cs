@@ -141,6 +141,12 @@ public class Player : MonoBehaviour
             isclimp = true;
             rb.gravityScale = 0f;
         }
+
+        if (other.gameObject.tag == "Healing")
+        {
+            health += 10;
+            
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
