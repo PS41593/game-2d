@@ -80,6 +80,8 @@ public class PlayerD : MonoBehaviour
         //anim
         anim.SetFloat("moving", Mathf.Abs(h_move));
 
+        
+
         //move
         h_move = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(h_move * speed, rb.velocity.y);
@@ -87,8 +89,8 @@ public class PlayerD : MonoBehaviour
         //2jumps
         if (duocPhepNhay && !Input.GetKey(KeyCode.W))
         {
-            doubleJump = false;
-
+            
+            anim.SetBool("jumping", true);
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -98,7 +100,7 @@ public class PlayerD : MonoBehaviour
                 doubleJump = !doubleJump;
             }
         }
-
+        anim.SetBool("jumping", !duocPhepNhay || doubleJump);
     }
     private void Fire()
     {
@@ -106,6 +108,7 @@ public class PlayerD : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetTrigger("attack");
+
             ballPrefab.transform.localScale = isfacingRight ? new Vector2(0.15f, 0.2095f) : new Vector2(-0.15f, 0.2095f);
             //tao ra vien dan tai vitri sung
             var oneBall = Instantiate(ballPrefab, attackTransform.position, Quaternion.identity);
