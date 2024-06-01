@@ -123,22 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &176382609 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4361554064494797376, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-  m_PrefabInstance: {fileID: 1109381094848513730}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &222745023 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5046589843653485977, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-  m_PrefabInstance: {fileID: 1109381094848513730}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &309101165
 GameObject:
   m_ObjectHideFlags: 0
@@ -11633,14 +11617,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 324004926599124408, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-      propertyPath: HPP
-      value: 
-      objectReference: {fileID: 222745023}
-    - target: {fileID: 324004926599124408, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-      propertyPath: bot
-      value: 
-      objectReference: {fileID: 176382609}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.2
@@ -11689,26 +11665,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3345951132688695082, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-      propertyPath: m_CullTransparentMesh
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4348702118591499260, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1192929820}
-    - target: {fileID: 4361554064494797376, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-      propertyPath: m_Value
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361554064494797376, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-      propertyPath: m_MaxValue
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4361554064494797376, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
-      propertyPath: m_WholeNumbers
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7306618463004029816, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_Name
       value: Bot
