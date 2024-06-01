@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: -0.21899414, y: 0.017990112}
+  m_SizeDelta: {x: 0.7539673, y: 3.4629974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3396684360267272032
 CanvasRenderer:
@@ -105,12 +105,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6280366065488389734}
+  m_Father: {fileID: 3391645303839765126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.21905518, y: 0.017990112}
+  m_SizeDelta: {x: 0.7539673, y: 0.09597778}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3345951132688695082
 CanvasRenderer:
@@ -177,8 +177,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1986086259400725167}
+  m_Children: []
   m_Father: {fileID: 3391645303839765126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
@@ -365,7 +364,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1945050475
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 1
   m_Sprite: {fileID: 1071340769, guid: 02ff6f69b8207f248b8f95773f0c0eab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -555,13 +554,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4738600227938276375}
+  - {fileID: 1986086259400725167}
   - {fileID: 6280366065488389734}
   m_Father: {fileID: 1031024751617879182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 57, y: -64}
-  m_SizeDelta: {x: 80.764, y: 13.66}
+  m_AnchoredPosition: {x: 58.74, y: -64.006}
+  m_SizeDelta: {x: 60.01, y: 6.734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4361554064494797376
 MonoBehaviour:
