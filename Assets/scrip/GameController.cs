@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] int score =0 ;
-    [SerializeField] int live =3 ;
+    [SerializeField] private static int score =0 ;
     [SerializeField] TextMeshProUGUI ScoreText ;
+
     
     // Start is called before the first frame update
     void Start()

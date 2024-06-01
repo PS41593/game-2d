@@ -11,10 +11,10 @@ public class Player : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private int health;
-    [SerializeField] private int maxHealth= 10;
+    [SerializeField] private int maxHealth = 100;
     [SerializeField]private float movespeed;
     [SerializeField]private float jumpspeed;
-    [SerializeField]private float climSpeed = 5f;
+    [SerializeField]private float climSpeed = 10f;
     private bool isclimp;
     Rigidbody2D rb;
     Animator animator;
@@ -29,7 +29,9 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform guntransform;
     CapsuleCollider2D capsuleCollider;
-    private float gravti;
+    
+    private float cooldown =2f;
+    private float fire = 0f;
     
     [SerializeField] private Slider SlHP;
     
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
-        gravti = rb.gravityScale;
+        //gravti = rb.gravityScale;
         health = maxHealth;
         
     }
@@ -49,8 +51,25 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
-        ten();        
-        //ClimpLadder();
+
+        bow();
+
+    }
+    public void bow()
+    {
+        if (Input.GetKeyUp(KeyCode.E) && Time.time > fire)
+        {
+            ten();
+            fire = Time.time + cooldown;
+        }
+    }
+    public void cooldowns() 
+    {
+        if(cooldown >0) 
+        {
+            ten(); 
+            cooldown = fire ;
+        }
     }
     private void Move()
     {
@@ -75,10 +94,6 @@ public class Player : MonoBehaviour
             animator.SetBool("isRun", true); 
             
         }
-        if(rb.velocity.y > 0)
-        {
-            
-        }
          if(Move == 0 && rb.velocity.y == 0)
         {
             animator.SetBool("isRun", false);
@@ -98,9 +113,9 @@ public class Player : MonoBehaviour
 
     private void ten()
     {
-        // nhan phim f ban dan
-        if (Input.GetKeyUp(KeyCode.E))
-        {
+        
+        
+        
             animator.SetTrigger("ak");
             bulletPrefab.transform.localScale = _flip ? new Vector2(0.15f, 0.2095f) : new Vector2(-0.15f, 0.2095f);
             // tao ra vien dan tai vi tri sung
@@ -115,15 +130,15 @@ public class Player : MonoBehaviour
                 .velocity = velocity;
             // Destroy Dan
             Destroy(onBullet, 2f);                 
-        }
+        
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var name = other.gameObject.name;
+      
         var tag = other.gameObject.tag;
         if (tag == "Bot"||tag =="Trap")
         {
-            TakeDamage(5);
+            TakeDamage(1);
             SlHP.value = health;
             if (health == 0)
             {
@@ -140,7 +155,12 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "Healing")
         {
             health += 10;
-            
+            Destroy(other.gameObject);
+            if (health > 100) 
+            {
+                health = maxHealth;
+            }
+            SlHP.value = health;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -160,18 +180,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    //private void ClimpLadder()
-    //{
-    //    var isTouchingLadder = capsuleCollider.IsTouchingLayers(LayerMask.GetMask("Ladder"));
-    //    if (!isTouchingLadder)
-    //    {
-    //        rb.gravityScale = gravti;
-    //        return;
-    //    }
-    //    var climvelocity = new Vector2(rb.velocity.x, up.y * climSpeed);
-    //    rb.velocity = climvelocity;
-    //    rb.gravityScale = 0;
-    //}
+    
     public void TakeDamage(int damage)
     {
         health -= damage; 

@@ -13,7 +13,7 @@ public class Bot : MonoBehaviour
     private bool _isMovingRight = true;
     [SerializeField]
     private float moveSpeed = 1f;
-    public int damage =5 ;
+    
     [SerializeField]private Slider bot;
     private int Hp;
     public int maxHp =100;
