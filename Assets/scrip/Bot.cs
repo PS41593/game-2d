@@ -26,7 +26,6 @@ public class Bot : MonoBehaviour
         Hp = maxHp;
         bot.value = Hp;
     }
-
     // Update is called once per frame
     void Update()
     {

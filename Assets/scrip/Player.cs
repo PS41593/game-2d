@@ -60,8 +60,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)&& canjump)
         {                                                      
             rb.velocity = new Vector2(rb.velocity.x, jumpspeed);
-            animator.SetBool("2Jump",true);
-            animator.SetBool("ak", false);
+            animator.SetTrigger("jump");
         }
         if (Move > 0 )
         {
@@ -73,31 +72,27 @@ public class Player : MonoBehaviour
         }
         if (rb.velocity.y == 0&& Move >0 ||rb.velocity.y==0 && Move <0) 
         {
-            animator.SetBool("isRun", true); animator.SetBool("ak", false);
+            animator.SetBool("isRun", true); 
+            
+        }
+        if(rb.velocity.y > 0)
+        {
+            
         }
          if(Move == 0 && rb.velocity.y == 0)
         {
             animator.SetBool("isRun", false);
-            
-            animator.SetBool("2Jump", false);
+            animator.SetBool("falling", false);
         }
          if(rb.velocity.y == 0)
-        {
-           
-            animator.SetBool("falling",false);
-            
+        {          
+            animator.SetBool("falling",false);           
         }        
         if (rb.velocity.y <0 ) 
         { 
-            animator.SetBool("falling", true);
-            
-            rb.velocity -= Vector * down *Time.deltaTime ;
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            animator.SetBool("ak", true);          
-        }
-        else animator.SetBool("ak", false);
+            animator.SetBool("falling", true);           
+            rb.velocity -= Vector * down *Time.deltaTime;
+        }      
         transform.localScale = _flip ? new Vector2(5.076945f, 4.419212f) : new Vector2(-5.076945f, 4.419212f);
     }
 
