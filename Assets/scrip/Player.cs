@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         }
          if(rb.velocity.y == 0)
         {
-            animator.SetBool("2Jump", false);
+           
             animator.SetBool("falling",false);
             
         }        
@@ -107,20 +107,20 @@ public class Player : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E))
         {
             animator.SetTrigger("ak");
+            bulletPrefab.transform.localScale = _flip ? new Vector2(0.15f, 0.2095f) : new Vector2(-0.15f, 0.2095f);
             // tao ra vien dan tai vi tri sung
             var onBullet = Instantiate(bulletPrefab, guntransform.position, Quaternion.identity);
-            // Cho vien dan bay theo huong nhan vat
+            // Cho vien dan bay theo huong nhan vat                     
             var velocity = new Vector2(10f, 0);
             if (_flip == false)
             {
-                velocity = new Vector2(-10f, 0);
-            }
+                velocity = new Vector2(-10f, 0);              
+            }                      
             onBullet.GetComponent<Rigidbody2D>()
                 .velocity = velocity;
             // Destroy Dan
-            Destroy(onBullet, 2f);           
+            Destroy(onBullet, 2f);                 
         }
-
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

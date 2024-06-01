@@ -53,11 +53,15 @@ public class Bot : MonoBehaviour
         // Scale Hiện tại
         // Trái < 0 Phải >0
         var currentSacle = transform.localScale;
+        var sli = bot.transform.localScale;
         if ((_isMovingRight && currentSacle.x < 0) || (_isMovingRight == false && currentSacle.x > 0))
         {
             currentSacle.x *= -1;
+            sli *= -1;
         }
         transform.localScale = currentSacle;
+        bot.transform.localScale = sli;
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {        
