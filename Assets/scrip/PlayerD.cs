@@ -89,8 +89,7 @@ public class PlayerD : MonoBehaviour
         //2jumps
         if (duocPhepNhay && !Input.GetKey(KeyCode.W))
         {
-            
-            anim.SetBool("jumping", true);
+            doubleJump = false;
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -100,7 +99,7 @@ public class PlayerD : MonoBehaviour
                 doubleJump = !doubleJump;
             }
         }
-        anim.SetBool("jumping", !duocPhepNhay || doubleJump);
+        anim.SetBool("jumping", !duocPhepNhay );
     }
     private void Fire()
     {
