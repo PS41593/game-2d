@@ -9,12 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu game.unity
     guid: 35f1d1a2066d0734d85d566ec78075be
   - enabled: 1
-    path: Assets/Scenes/Lever 1.unity
-    guid: 335e15bea6af0f14ca98eb9e8a07bebc
+    path: Assets/Scenes/Screen 1.unity
+    guid: 9450faef44363ea4b9c32eeb479c81eb
   - enabled: 1
-    path: Assets/Scenes/Lever 2.unity
-    guid: 7aa9e89f2b3d88a4d8e12e55543f921c
+    path: Assets/Scenes/Screen 2.unity
+    guid: 6f5f47c2e5b6aef4daa5670c12e499e8
   - enabled: 1
-    path: Assets/Scenes/Lever 3.unity
-    guid: da8659c1f7e340d47bfa8bbdd2059550
+    path: Assets/Scenes/Screen 3.unity
+    guid: 319200ff8e60a9b43a6c5ae0ca03dffd
   m_configObjects: {}

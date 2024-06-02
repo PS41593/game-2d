@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     public Transform guntransform;
     CapsuleCollider2D capsuleCollider;
     
-    private float cooldown =2f;
+    private float cooldown =1f;
     private float fire = 0f;
     
     [SerializeField] private Slider SlHP;
