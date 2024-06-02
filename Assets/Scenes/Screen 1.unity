@@ -16213,7 +16213,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 590159537}
     m_Modifications:
     - target: {fileID: 324004926599124408, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: leftBoundary
@@ -16221,15 +16221,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.31
+      value: 8.710037
       objectReference: {fileID: 0}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.96
+      value: -15.3177395
       objectReference: {fileID: 0}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.013111845
+      value: -0.02622369
       objectReference: {fileID: 0}
     - target: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16340,6 +16340,7 @@ Transform:
   - {fileID: 201655600}
   - {fileID: 609673887}
   - {fileID: 1768824872}
+  - {fileID: 1842359365}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &591792687
@@ -16931,8 +16932,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 95876099}
   - {fileID: 309101166}
+  - {fileID: 95876099}
   - {fileID: 1109857616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19233,6 +19234,11 @@ RectTransform:
   m_AnchoredPosition: {x: -187.5, y: 196.7}
   m_SizeDelta: {x: 275.37, y: 32.75}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1842359365 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 678638741554661742, guid: e114fc88615068c46b13b97ca291c4ff, type: 3}
+  m_PrefabInstance: {fileID: 545765001}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1899630421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19896,5 +19902,4 @@ SceneRoots:
   - {fileID: 391948144}
   - {fileID: 590159537}
   - {fileID: 586642172}
-  - {fileID: 545765001}
   - {fileID: 1448530792}
