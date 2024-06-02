@@ -21,4 +21,5 @@ public class GameController : MonoBehaviour
     }
     // Update is called once per frame
    
+   public int getScore() { return score; }
 }

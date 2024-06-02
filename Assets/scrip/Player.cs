@@ -6,6 +6,7 @@ using Unity.VisualScripting.Dependencies;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -21,14 +22,14 @@ public class Player : MonoBehaviour
     public Transform _canjump;
     public LayerMask nen;
     private bool canjump;
-    //private bool doublejump;
+    
     private bool _flip;
     [SerializeField] private float down;
     Vector2 Vector;
-    Vector2 up;
+    
     public GameObject bulletPrefab;
     public Transform guntransform;
-    CapsuleCollider2D capsuleCollider;
+    
     
     private float cooldown =1f;
     private float fire = 0f;
@@ -41,9 +42,10 @@ public class Player : MonoBehaviour
         Vector = new Vector2(0,-Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
+        
         //gravti = rb.gravityScale;
         health = maxHealth;
+        SlHP.value = health;
         
     }
 
@@ -138,11 +140,12 @@ public class Player : MonoBehaviour
         var tag = other.gameObject.tag;
         if (tag == "Bot"||tag =="Trap")
         {
-            TakeDamage(1);
+            TakeDamage(10);
             SlHP.value = health;
             if (health == 0)
             {
                 Destroy(gameObject);
+                SceneManager.LoadScene(0);
             }
         }
         
