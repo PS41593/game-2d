@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     
     public GameObject bulletPrefab;
     public Transform guntransform;
-    
+    CapsuleCollider2D capsuleCollider;
     
     private float cooldown =1f;
     private float fire = 0f;
@@ -42,9 +42,9 @@ public class Player : MonoBehaviour
         Vector = new Vector2(0,-Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
-        //gravti = rb.gravityScale;
-        health = maxHealth;
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
+       //gravti = rb.gravityScale;
+       health = maxHealth;
         SlHP.value = health;
         
     }
