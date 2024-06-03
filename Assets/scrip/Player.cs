@@ -33,7 +33,11 @@ public class Player : MonoBehaviour
     
     private float cooldown =1f;
     private float fire = 0f;
-    
+
+    private AudioSource _audioSource;
+    [SerializeField]
+    private AudioClip _CoinSound;
+
     [SerializeField] private Slider SlHP;
     
     
@@ -151,9 +155,9 @@ public class Player : MonoBehaviour
         
         if (other.gameObject.tag == "Ladder")
         {
-            isclimp = true;
-            rb.gravityScale = 0f;
             
+            isclimp = true;
+            rb.gravityScale = 0f;         
         }
 
         if (other.gameObject.tag == "Healing")
@@ -165,6 +169,10 @@ public class Player : MonoBehaviour
                 health = maxHealth;
             }
             SlHP.value = health;
+        }
+        if (other.gameObject.tag == "Coin")
+        {
+            _audioSource.PlayOneShot(_CoinSound);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
