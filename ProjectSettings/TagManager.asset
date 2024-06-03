@@ -72,3 +72,6 @@ TagManager:
   - name: Player
     uniqueID: 1581035925
     locked: 0
+  - name: Ban diem
+    uniqueID: 3886067909
+    locked: 0
