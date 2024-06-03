@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
     }
     public void bow()
     {
-        if (Input.GetKeyUp(KeyCode.E) && Time.time > fire)
+        if (Input.GetKeyUp(KeyCode.Space) && Time.time > fire)
         {
             ten();
             fire = Time.time + cooldown;
@@ -153,6 +153,7 @@ public class Player : MonoBehaviour
         {
             isclimp = true;
             rb.gravityScale = 0f;
+            
         }
 
         if (other.gameObject.tag == "Healing")
