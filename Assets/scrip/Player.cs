@@ -69,14 +69,7 @@ public class Player : MonoBehaviour
             fire = Time.time + cooldown;
         }
     }
-    public void cooldowns() 
-    {
-        if(cooldown >0) 
-        {
-            ten(); 
-            cooldown = fire ;
-        }
-    }
+   
     private void Move()
     {
         canjump = Physics2D.OverlapCircle(_canjump.position, 0.2f, nen);
@@ -142,7 +135,7 @@ public class Player : MonoBehaviour
     {
       
         var tag = other.gameObject.tag;
-        if (tag == "Bot"||tag =="Trap")
+        if (tag == "Bot"||tag =="Trap" || tag == "Magic")
         {
             TakeDamage(10);
             SlHP.value = health;

@@ -14,9 +14,6 @@ public class bullet : MonoBehaviour
         if (!collision.CompareTag("Coin"))
         {
             Destroy(gameObject);
-        }
-       
-
-
+        }       
     }
 }

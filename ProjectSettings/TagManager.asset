@@ -11,6 +11,7 @@ TagManager:
   - Trap
   - Ground
   - Healing
+  - Magic
   layers:
   - Default
   - TransparentFX
@@ -65,6 +66,9 @@ TagManager:
     locked: 0
   - name: bullet
     uniqueID: 3223487621
+    locked: 0
+  - name: boss
+    uniqueID: 2073256291
     locked: 0
   - name: bot
     uniqueID: 2349916821

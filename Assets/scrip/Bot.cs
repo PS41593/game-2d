@@ -19,8 +19,11 @@ public class Bot : MonoBehaviour
     public int maxHp =100;
 
     [SerializeField] private GameObject itemPrefab;
-    private bool _isTouchingPlayer = false;
-
+    
+    private float cooldown = 4f;
+    private float fire = 0f;
+    public GameObject bulletPrefab;
+    public Transform guntransform;
     void Start()
     {
         Hp = maxHp;
@@ -64,7 +67,11 @@ public class Bot : MonoBehaviour
         }
         transform.localScale = currentSacle;
         bot.transform.localScale = sli;
-
+        if( Time.time > fire)
+            {
+                magic();
+                fire = Time.time + cooldown;
+            }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {        
@@ -124,5 +131,20 @@ public class Bot : MonoBehaviour
         ////bien mat khoi
         Destroy(gameObject);
     }
-
+    public void magic()
+    {
+        bulletPrefab.transform.localScale = _isMovingRight ? new Vector2(6.276599f, 9.053264f) : new Vector2(-6.276599f, 9.053264f);
+        // tao ra vien dan tai vi tri sung
+        var onBullet = Instantiate(bulletPrefab, guntransform.position, Quaternion.identity);
+        // Cho vien dan bay theo huong nhan vat                     
+        var velocity = new Vector2(10f, 0);
+        if (_isMovingRight == false)
+        {
+            velocity = new Vector2(-10f, 0);
+        }
+        onBullet.GetComponent<Rigidbody2D>()
+            .velocity = velocity;
+        // Destroy Dan
+        Destroy(onBullet, 0.5f);
+    }
 }
