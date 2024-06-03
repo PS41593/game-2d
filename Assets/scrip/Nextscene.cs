@@ -6,14 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class Nextscene : MonoBehaviour
 {
-    private float levelLoaDelat = 2f;
+    private float levelLoaDelat = 1.5f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         
         if (other.CompareTag("Player"))
         {
-
+            
             StartCoroutine(LoadNextLevel());
+            
         }
     }
     private IEnumerator LoadNextLevel()
