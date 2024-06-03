@@ -153,6 +153,7 @@ public class Player : MonoBehaviour
         {
             isclimp = true;
             rb.gravityScale = 0f;
+            
         }
 
         if (other.gameObject.tag == "Healing")
