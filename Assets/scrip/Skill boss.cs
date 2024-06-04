@@ -20,7 +20,7 @@ public class Skillboss : MonoBehaviour
 
     [SerializeField] private GameObject itemPrefab;
 
-    private float cooldown = 1f;
+    private float cooldown = 4f;
     private float fire = 0f;
     public GameObject bulletPrefab;
     public Transform guntransform;
@@ -69,7 +69,7 @@ public class Skillboss : MonoBehaviour
         bot.transform.localScale = sli;
         if (Time.time > fire)
         {
-
+            magic();
             fire = Time.time + cooldown;
         }
     }
@@ -133,18 +133,18 @@ public class Skillboss : MonoBehaviour
     }
     public void magic()
     {
-        bulletPrefab.transform.localScale = _isMovingRight ? new Vector2(0.15f, 0.2095f) : new Vector2(-0.15f, 0.2095f);
+        bulletPrefab.transform.localScale = _isMovingRight ? new Vector2(6.276599f, 9.053264f) : new Vector2(-6.276599f, 9.053264f);
         // tao ra vien dan tai vi tri sung
         var onBullet = Instantiate(bulletPrefab, guntransform.position, Quaternion.identity);
         // Cho vien dan bay theo huong nhan vat                     
-        var velocity = new Vector2(10f, 0);
+        var velocity = new Vector2(30f, 0);
         if (_isMovingRight == false)
         {
-            velocity = new Vector2(-10f, 0);
+            velocity = new Vector2(-30f, 0);
         }
         onBullet.GetComponent<Rigidbody2D>()
             .velocity = velocity;
         // Destroy Dan
-        Destroy(onBullet, 2f);
+        Destroy(onBullet, 0.5f);
     }
 }
