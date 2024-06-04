@@ -23,3 +23,4 @@ public class GameController : MonoBehaviour
    
    public int getScore() { return score; }
 }
+
