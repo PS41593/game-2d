@@ -137,10 +137,10 @@ public class Bot : MonoBehaviour
         // tao ra vien dan tai vi tri sung
         var onBullet = Instantiate(bulletPrefab, guntransform.position, Quaternion.identity);
         // Cho vien dan bay theo huong nhan vat                     
-        var velocity = new Vector2(10f, 0);
+        var velocity = new Vector2(30f, 0);
         if (_isMovingRight == false)
         {
-            velocity = new Vector2(-10f, 0);
+            velocity = new Vector2(-30f, 0);
         }
         onBullet.GetComponent<Rigidbody2D>()
             .velocity = velocity;

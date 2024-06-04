@@ -106,7 +106,13 @@ public class Player : MonoBehaviour
         { 
             animator.SetBool("falling", true);           
             rb.velocity -= Vector * down *Time.deltaTime;
-        }      
+        }
+        if (isclimp)
+        {
+            animator.SetBool("Climp", true);
+            
+        }
+        else animator.SetBool("Climp", false);
         transform.localScale = _flip ? new Vector2(5.076945f, 4.419212f) : new Vector2(-5.076945f, 4.419212f);
     }
 
