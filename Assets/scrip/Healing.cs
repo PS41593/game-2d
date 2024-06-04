@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Healing : MonoBehaviour
 {
-    public Vector3 spinRotationSpeed = new Vector3(0, 180, 0);
+    public Vector3 spinRotationSpeed = new Vector3(0,180, 0);
 
     // Update is called once per frame
     void Update()
