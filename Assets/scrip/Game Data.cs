@@ -15,6 +15,6 @@ namespace game
     [Serializable]public class GameDataPlayed
     {
         public List<GameData> plays;
-        internal List<GameData> Plays;
+       
     }
 }

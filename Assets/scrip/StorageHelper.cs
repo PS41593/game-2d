@@ -13,7 +13,7 @@ namespace game
         {
             played = new GameDataPlayed()
             {
-                Plays = new List<GameData>()
+                plays = new List<GameData>()
             };
            string datAsJson = StorageMangerBase.LoadFromFile(filename);
            if(datAsJson != null)
