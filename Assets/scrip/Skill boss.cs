@@ -1,7 +1,9 @@
 ﻿using System.Collections;
+using game;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Skillboss : MonoBehaviour
 {
@@ -24,8 +26,16 @@ public class Skillboss : MonoBehaviour
     private float fire = 0f;
     public GameObject bulletPrefab;
     public Transform guntransform;
+    [SerializeField] GameObject informationcanvas;
+    [SerializeField] GameObject finishCanvas;
+    private StorageHelper storageHelper;
+    private GameDataPlayed played;
+    [SerializeField] GameObject row;
     void Start()
     {
+        storageHelper = new StorageHelper();
+        storageHelper.LoadData();
+        played = storageHelper.played;
         Hp = maxHp;
         bot.value = Hp;
     }
@@ -80,10 +90,42 @@ public class Skillboss : MonoBehaviour
         {
             Hp -= 10;
             bot.value = Hp;
-            if (Hp == 0)
+            if (Hp <= 0)
             {
                 Destroy(gameObject, 1f);
                 StartCoroutine(GoUp());
+                informationcanvas.SetActive(false);
+                Debug.Log("fix game");
+                try
+                {
+                    var Score = FindObjectOfType<GameController>().getScore();
+                    // lưu Thành tích Của người chơi 
+                    var gamedata = new GameData()
+                    {
+                        score = Score,
+                        timeplayed = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                    };
+                    played.plays.Add(gamedata);
+                    storageHelper.SaveData();
+                    played = storageHelper.played;
+                    Debug.Log("Count: " + played.plays.Count);
+                    // tải đữ liệu trong file hiển thị lên bảng thành tích
+                    played.plays.Sort((x, y) => y.score.CompareTo(x.score));
+                    for (int i = 0; i < 5; i++)
+                    {
+                        var rowIntace = Instantiate(row, row.transform.parent);
+                        rowIntace.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = (i + 1).ToString();
+                        rowIntace.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = played.plays[i].score.ToString();
+                        rowIntace.transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = played.plays[i].timeplayed.ToString();
+
+                    }
+                    finishCanvas.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                catch (Exception e)
+                {
+                    Debug.Log(e);
+                }
             }
         }
 
