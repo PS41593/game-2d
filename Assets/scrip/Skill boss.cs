@@ -19,7 +19,7 @@ public class Skillboss : MonoBehaviour
     private float moveSpeed = 1f;
 
     [SerializeField] private Slider bot;
-    private int Hp;
+    public int Hp;
     public int maxHp = 100;
 
     [SerializeField] private GameObject itemPrefab;
@@ -28,8 +28,8 @@ public class Skillboss : MonoBehaviour
     private float fire = 0f;
     public GameObject bulletPrefab;
     public Transform guntransform;
-    [SerializeField] GameObject informationcanvas;
-    [SerializeField] GameObject finishCanvas;
+    /*[SerializeField] GameObject informationcanvas;
+    [SerializeField] GameObject finishCanvas;*/
     private StorageHelper storageHelper;
     private GameDataPlayed played;
     [SerializeField] GameObject row;
@@ -96,7 +96,7 @@ public class Skillboss : MonoBehaviour
             {
                 Destroy(gameObject, 1f);
                 StartCoroutine(GoUp());
-                informationcanvas.SetActive(false);
+                /*informationcanvas.SetActive(true);
                 Debug.Log("fix game");
                 try
                 {
@@ -127,7 +127,7 @@ public class Skillboss : MonoBehaviour
                 catch (Exception e)
                 {
                     Debug.Log(e);
-                }
+                }*/
             }
         }
 

@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     private float cooldown =1f;
     private float fire = 0f;
 
-    private AudioSource _audioSource;
+    public AudioSource _audioSource;
     [SerializeField]
     private AudioClip _CoinSound;
 
@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
         }
         if (other.gameObject.tag == "Coin")
         {
-            _audioSource.PlayOneShot(_CoinSound);
+            _audioSource.Play();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
