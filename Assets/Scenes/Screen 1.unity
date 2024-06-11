@@ -19338,9 +19338,25 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 196056593121969781, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
+      propertyPath: _CoinSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 23eb38bc521600845ab78f749c08be5f, type: 3}
+    - target: {fileID: 196056593121969781, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 1835787348791802682}
     - target: {fileID: 1231136837403162836, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
       propertyPath: m_SortingOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3887043516807214988, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 23eb38bc521600845ab78f749c08be5f, type: 3}
+    - target: {fileID: 3887043516807214988, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5234672199857160529, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
       propertyPath: m_Name
@@ -19414,7 +19430,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835787348791802680}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0f05d2052107f3048bd4a1963f6b72ae, type: 3}
@@ -19503,6 +19519,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &1835787348791802682 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 552139240883769980, guid: 7e07e30f0e51c814099ceb7b7e57822e, type: 3}
+  m_PrefabInstance: {fileID: 1835787348791802679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

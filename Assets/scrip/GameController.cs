@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private static int score =0 ;
+    [SerializeField] public static int score =0 ;
 
     [SerializeField] TextMeshProUGUI ScoreText ;
 
@@ -23,5 +23,7 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
    
    public int getScore() { return score; }
+    public static void ReSetScore()
+    {  score = 0; }
 }
 

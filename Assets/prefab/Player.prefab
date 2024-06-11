@@ -137,8 +137,8 @@ MonoBehaviour:
   down: 0
   bulletPrefab: {fileID: 5507200618814326012, guid: 7c74a62af9835174bbd4112acfcaa847, type: 3}
   guntransform: {fileID: 7008766972956863744}
-  _audioSource: {fileID: 0}
-  _CoinSound: {fileID: 0}
+  _audioSource: {fileID: 552139240883769980}
+  _CoinSound: {fileID: 8300000, guid: 23eb38bc521600845ab78f749c08be5f, type: 3}
   SlHP: {fileID: 0}
 --- !u!70 &9184259280504702290
 CapsuleCollider2D:
@@ -305,7 +305,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5234672199857160529}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}

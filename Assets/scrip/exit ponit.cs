@@ -28,7 +28,7 @@ public class exitponit : MonoBehaviour
     {
         if (_skillboss.Hp <= 0)
         {
-            finishCanvas.SetActive(true);
+            informationcanvas.SetActive(false);
             //Debug.Log("fix game");
             try
             {
@@ -42,7 +42,7 @@ public class exitponit : MonoBehaviour
                 played.plays.Add(gamedata);
                 storageHelper.SaveData();
                 played = storageHelper.played;
-                Debug.Log("Count: " + played.plays.Count);
+                //Debug.Log("Count: " + played.plays.Count);
                 // tải đữ liệu trong file hiển thị lên bảng thành tích
                 played.plays.Sort((x, y) => y.score.CompareTo(x.score));
                 for (int i = 0; i < 5; i++)

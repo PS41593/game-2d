@@ -169,10 +169,10 @@ public class Player : MonoBehaviour
             }
             SlHP.value = health;
         }
-        if (other.gameObject.tag == "Coin")
+        /*if (other.gameObject.tag == "Coin")
         {
             _audioSource.Play();
-        }
+        }*/
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
