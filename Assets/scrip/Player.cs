@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public Transform guntransform;
     CapsuleCollider2D capsuleCollider;
     
-    private float cooldown =1f;
+    private float cooldown =0.5f;
     private float fire = 0f;
 
     public AudioSource _audioSource;

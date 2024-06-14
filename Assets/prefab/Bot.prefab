@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0.21899414, y: 0.017990112}
+  m_AnchoredPosition: {x: -0.21899414, y: 0.017974854}
   m_SizeDelta: {x: 0.7539673, y: 3.4629974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3396684360267272032
@@ -182,7 +182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 4.9999924, y: 0}
+  m_AnchoredPosition: {x: 4.9999695, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6660061266194804304
@@ -222,7 +222,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: -1.2377157, y: 1.4850705}
-  m_SizeDelta: {x: 718.00006, y: 449}
+  m_SizeDelta: {x: 709, y: 449}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4348702118591499260
 Canvas:
@@ -444,8 +444,6 @@ MonoBehaviour:
   bot: {fileID: 4361554064494797376}
   maxHp: 50
   itemPrefab: {fileID: 5010481258305430185, guid: 632a2d2039490554ead710f158b35cc6, type: 3}
-  bulletPrefab: {fileID: 0}
-  guntransform: {fileID: 0}
 --- !u!70 &4603313471549046392
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -560,10 +558,10 @@ RectTransform:
   - {fileID: 6280366065488389734}
   m_Father: {fileID: 1031024751617879182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 58.74, y: -64.006}
-  m_SizeDelta: {x: 60.01, y: 6.734}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 58.740005, y: -64.006}
+  m_SizeDelta: {x: -657.99005, y: -442.266}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4361554064494797376
 MonoBehaviour:

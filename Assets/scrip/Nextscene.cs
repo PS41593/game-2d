@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Nextscene : MonoBehaviour
 {
-    private float levelLoaDelat = 1.5f;
+    private float levelLoaDelat = 1f;
     private void OnTriggerEnter2D(Collider2D other)
     {
         

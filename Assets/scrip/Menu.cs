@@ -16,7 +16,7 @@ public class Menu : MonoBehaviour
     public void playgame()
     {
         SceneManager.LoadScene(1);
-        //_gameController.ReSetScore();
+        
         GameController.ReSetScore();
 
     }
