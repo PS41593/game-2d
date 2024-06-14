@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9184259280504702290}
   - component: {fileID: 408805804208532312}
   - component: {fileID: 552139240883769980}
-  - component: {fileID: 3887043516807214988}
+  - component: {fileID: 8323450076673218761}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -138,8 +138,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 5507200618814326012, guid: 7c74a62af9835174bbd4112acfcaa847, type: 3}
   guntransform: {fileID: 7008766972956863744}
   _audioSource: {fileID: 552139240883769980}
-  _CoinSound: {fileID: 8300000, guid: 23eb38bc521600845ab78f749c08be5f, type: 3}
   SlHP: {fileID: 0}
+  soundVatpham: {fileID: 8323450076673218761}
 --- !u!70 &9184259280504702290
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -172,8 +172,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.22, y: 0.28000003}
+  m_Offset: {x: 0.0006625732, y: 0}
+  m_Size: {x: 0.17627284, y: 0.28000003}
   m_Direction: 0
 --- !u!50 &408805804208532312
 Rigidbody2D:
@@ -298,18 +298,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &3887043516807214988
+--- !u!82 &8323450076673218761
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5234672199857160529}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 6e16a456718b82b42a3f6e10d823b8fd, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

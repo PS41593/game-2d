@@ -31,16 +31,18 @@ public class Player : MonoBehaviour
     public Transform guntransform;
     CapsuleCollider2D capsuleCollider;
     
-    private float cooldown =0.5f;
+    private float cooldown =0.89f;
     private float fire = 0f;
 
     public AudioSource _audioSource;
-    [SerializeField]
-    private AudioClip _CoinSound;
+    //[SerializeField] private AudioSource _CoinSound;
+
+
 
     [SerializeField] private Slider SlHP;
-    
-    
+
+
+    public AudioSource soundVatpham;
     void Start()
     {
         Vector = new Vector2(0,-Physics2D.gravity.y);
@@ -137,6 +139,7 @@ public class Player : MonoBehaviour
             Destroy(onBullet, 2f);                 
         
     }
+   
     private void OnTriggerEnter2D(Collider2D other)
     {
       
@@ -161,6 +164,7 @@ public class Player : MonoBehaviour
 
         if (other.gameObject.tag == "Healing")
         {
+            soundVatpham.Play();
             health += 10;
             Destroy(other.gameObject);
             if (health > 100) 
@@ -169,10 +173,10 @@ public class Player : MonoBehaviour
             }
             SlHP.value = health;
         }
-        /*if (other.gameObject.tag == "Coin")
+        if (other.gameObject.tag == "Coin")
         {
-            _audioSource.Play();
-        }*/
+            soundVatpham.Play();
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
